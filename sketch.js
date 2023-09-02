@@ -77,11 +77,6 @@ function draw() {
  
   background(600,800);
 
-  fill("red");
-  textSize(100)
-  text("Score:" + score, windowWidth - 200, 40)
-
-
   if (gameState == PLAY) {
 
     if (castle.x < 500) {
@@ -165,9 +160,12 @@ function draw() {
     }
 
   }
-
-  
   drawSprites();
+
+  fill("red");
+  textSize(100)
+  text("Score:" + score, windowWidth - 200, 40)
+
 }
 
 function spawnCoins() {
@@ -218,10 +216,9 @@ function spawnObstacles() {
     restart.visible = false;
     boy.x = 50;
     boy.y = windowHeight - 178;
-
+    lives = 3;
+    
    obstaclesGroup.destroyEach();
    coinsGroup.destroyEach();
-   score = 0;
+   
 }
-
-
